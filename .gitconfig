@@ -1,0 +1,28 @@
+[user]
+	name = Olivier Hill
+	email = 11464115+olivierhill@users.noreply.github.com
+	signingkey = 279744A6916DB4F4
+
+# Sign everything
+[commit]
+	gpgsign = true
+
+[alias]
+	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f"
+
+# Original idea from PN: https://github.com/pndurette/mac-setup
+#
+# Adapted to Git 2.36 remote includeif
+#
+# https://stackoverflow.com/questions/61983894/git-global-config-for-specific-repositories/71096731#71096731
+# https://stackoverflow.com/questions/72078027/git-user-depending-on-remote-url
+#
+# Without leaking too much info on our Git repo address (hopefully).
+#
+# BitBucket
+[includeIf "hasconfig:remote.*.url:ssh://*.viarail.ca:*/**"]
+    path = .gitconfig-via
+
+# Azure
+[includeIf "hasconfig:remote.*.url:*@vs-ssh.visualstudio.com:v3/viarail-*/**"]
+    path = .gitconfig-via
