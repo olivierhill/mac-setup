@@ -1,11 +1,14 @@
 [user]
 	name = Olivier Hill
 	email = 11464115+olivierhill@users.noreply.github.com
-	signingkey = 279744A6916DB4F4
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBF5Da9dCe1CViNTafY5c/o7x4BJX+hF0DWsLzEsDUbU
 
 # Sign everything
 [commit]
 	gpgsign = true
+
+[gpg]
+	format = ssh
 
 [push]
 	followTags = true
