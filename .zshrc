@@ -1,5 +1,5 @@
 # Unlock SSH keys with Keychain
-ssh-add --apple-use-keychain
+ssh-add --apple-load-keychain
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
